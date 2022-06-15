@@ -83,38 +83,46 @@ public class EstudianteDAO implements IEstudianteDAO {
 
 	@Override
 	public void update(Estudiante E) {
-		String sql = "update estudiante set rut = '" + E.getRut() 
-		+ "', nombre ='" + E.getNombre() 
-		+ "',email ='"+ E.getEmail() 
-		+ "',telefono ='" + E.getTelefono()
-		+ "' where id = " + E.getId();
-		
+		String sql = "update estudiante set rut = '" + E.getRut() + "', nombre ='" + E.getNombre() + "',email ='"
+				+ E.getEmail() + "',telefono ='" + E.getTelefono() + "' where id = " + E.getId();
+
 		try {
-			
+
 			Connection c = CoenexionBDsustantiva.getCon();
 
 			Statement s = c.createStatement();
-			
+
 			s.execute(sql);
-			
-			
+
 		} catch (Exception e2) {
 			System.err.println("Error update");
 			e2.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
 	public void delete(Estudiante E) {
-		// TODO Auto-generated method stub
+		delete(E.getId());
 
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		String sql = "delete from estudiante where id = '" + id;
 
+		try {
+
+			Connection c = CoenexionBDsustantiva.getCon();
+
+			Statement s = c.createStatement();
+
+			s.execute(sql);
+
+		} catch (Exception e2) {
+			System.err.println("Error en metodo Delete");
+			e2.printStackTrace();
+		}
 	}
 
 }

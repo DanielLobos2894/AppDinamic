@@ -54,7 +54,7 @@
 
 			</div>
 			<div class="mb-3">
-				<label for="formTelefono" class="form-label">Nombre</label> <input
+				<label for="formTelefono" class="form-label">Telefono</label> <input
 					type="Text" class="form-control" name="telefono" id="telefono"
 					placeholder="${estudiantes.getTelefono()}"
 					value="${estudiantes.getTelefono()}">

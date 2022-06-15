@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Delete;
+
 import model.Estudiante;
 import model.EstudianteDAO;
 import model.IEstudianteDAO;
@@ -31,15 +33,45 @@ public class DetalleEstudianteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		int id = Integer.parseInt(request.getParameter("id"));
+		String op = request.getParameter("op");
+		
+		String strId = request.getParameter("id");
+		int id = 0;
+		
+		if(strId != null) {
+			id = Integer.parseInt(strId);
+		}
+		
+		
+		
 		
 		EstudianteDAO eDAO = new EstudianteDAO();
 		
-		Estudiante E = eDAO.read(id);
+		if(op==null && id > 0) {
+			//codigo para consultar 
+			
+			
+			Estudiante E = eDAO.read(id);
+			
+			request.setAttribute("estudiantes", E);
+			
+			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
+			
+		}else if (id==0){
+			
+			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
+		}
 		
-		request.setAttribute("estudiantes", E);
 		
-		getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
+		else if(op.equalsIgnoreCase("del")) {
+			
+			eDAO.delete(id);
+			
+			response.sendRedirect(request.getContextPath()+ "/EstudianteServlet");
+			
+		}
+		
+		
 	}
 
 	/**
@@ -62,5 +94,7 @@ public class DetalleEstudianteServlet extends HttpServlet {
 		
 		response.sendRedirect(request.getContextPath()+ "/EstudianteServlet");
 	}
+	
+	
 
 }
