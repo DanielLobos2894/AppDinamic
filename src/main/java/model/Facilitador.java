@@ -10,7 +10,7 @@ public class Facilitador {
 	private String telefono;
 	private String valorhora;
 	private String banco;
-	private String ctabanco;
+	private String ctabancaria;
 	
 	
 	public Facilitador() {
@@ -19,7 +19,7 @@ public class Facilitador {
 
 
 	public Facilitador(int id, String rut, String nombre, String email, String telefono, String valorhora, String banco,
-			String ctabanco) {
+			String ctabancaria) {
 		super();
 		this.id = id;
 		this.rut = rut;
@@ -28,7 +28,7 @@ public class Facilitador {
 		this.telefono = telefono;
 		this.valorhora = valorhora;
 		this.banco = banco;
-		this.ctabanco = ctabanco;
+		this.ctabancaria = ctabancaria;
 	}
 
 
@@ -102,13 +102,13 @@ public class Facilitador {
 	}
 
 
-	public String getCtabanco() {
-		return ctabanco;
+	public String getCtabancaria() {
+		return ctabancaria;
 	}
 
 
-	public void setCtabanco(String ctabanco) {
-		this.ctabanco = ctabanco;
+	public void setCtabancaria(String ctabancaria) {
+		this.ctabancaria = ctabancaria;
 	}
 	
 	

@@ -39,10 +39,12 @@
 						data-bs-toggle="collapse" data-bs-target="#collapseOne"
 						aria-expanded="true" aria-controls="collapseOne">MiApp</button>
 				</h2>
+				
+				<%-- Resumen --%>
 				<div id="collapseOne" class="accordion-collapse collapse show"
 					aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
-						<strong>App web creada por Daniel Lobos.<br>Apoyado
+						<strong><h2>App web creada con JEE.</h2><br>Apoyado
 							del material en la plataforma de sustantiva, dando inicio a este
 							pequeño vistazo a un proyecto:<br>
 							<ul>
@@ -51,25 +53,25 @@
 								<li>Eliminar Estudiantes</li>
 								<li>Una lista de Facilitadores.</li>
 
-
 							</ul>
+						</strong>
 					</div>
 				</div>
 			</div>
 
 			<div class="accordion-item">
 
-
-				<h2 class="accordion-header" id="headingThree">
+              <%-- Acceso rapido--%>
+				<h2 class="accordion-header" id="headingTwo">
 					<button class="accordion-button collapsed" type="button"
-						data-bs-toggle="collapse" data-bs-target="#collapseThree"
-						aria-expanded="false" aria-controls="collapseThree">Acceso
+						data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+						aria-expanded="false" aria-controls="#collapseTwo">Acceso
 						Rapido</button>
 				</h2>
-				<div id="collapseThree" class="accordion-collapse collapse"
-					aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+				<div id="collapseTwo" class="accordion-collapse collapse"
+					aria-labelledby="collapseTwo" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="float: left;">
 							<img src="..." class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Estudiante</h5>
@@ -84,36 +86,54 @@
 								
 								<a
 									href="${pageContext.request.contextPath}/DetalleEstudianteServlet"
-									class="btn btn-primary">Ver Mas</a>
+									class="btn btn-primary">Nuevo</a>
+							</div>
+						</div>
+						<div class="card" style="float: left ;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Facilitador</h5>
+								<p class="card-text">Agregar un Nuevo Facilitador.</p>
+								<ul>
+									<li>Rut</li>
+									<li>Nombre</li>
+									<li>Email</li>
+									<li>Telefono</li>
+									<li>Valor por Hora</li>
+									<li>Banco</li>
+									<li>Cuenta de Banco</li>
+
+								</ul>
+								
+								<a
+									href="${pageContext.request.contextPath}/DetalleFacilitadorServlet"
+									class="btn btn-primary">Nuevo</a>
+							</div>
+						</div>
+						<div class="card" style="float: left;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Facilitador</h5>
+								<p class="card-text">Agregar un Nuevo Facilitador.</p>
+								<ul>
+									<li>Rut</li>
+									<li>Nombre</li>
+									<li>Email</li>
+									<li>Telefono</li>
+
+								</ul>
+								
+								<a
+									href="${pageContext.request.contextPath}/DetalleEstudianteServlet"
+									class="btn btn-primary">Nuevo</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="accordion-item">
-
-
-				<h2 class="accordion-header" id="headingThree">
-					<button class="accordion-button collapsed" type="button"
-						data-bs-toggle="collapse" data-bs-target="#collapseThree"
-						aria-expanded="false" aria-controls="collapseThree">
-						Accordion Item #3</button>
-				</h2>
-				<div id="collapseThree" class="accordion-collapse collapse"
-					aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-					<div class="accordion-body">
-						<strong>This is the third item's accordion body.</strong> It is
-						hidden by default, until the collapse plugin adds the appropriate
-						classes that we use to style each element. These classes control
-						the overall appearance, as well as the showing and hiding via CSS
-						transitions. You can modify any of this with custom CSS or
-						overriding our default variables. It's also worth noting that just
-						about any HTML can go within the
-						<code>.accordion-body</code>
-						, though the transition does limit overflow.
-					</div>
-				</div>
-			</div>
+		
+			
+			
 		</div>
 
 	</div>

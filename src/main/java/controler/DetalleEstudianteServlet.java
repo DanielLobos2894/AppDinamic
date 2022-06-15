@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud.Delete;
 
 import model.Estudiante;
 import model.EstudianteDAO;
-import model.IEstudianteDAO;
 
 /**
  * Servlet implementation class DestalleEstudianteServlet
