@@ -11,8 +11,21 @@ public class EstudianteDAO implements IEstudianteDAO {
 
 	@Override
 	public void crear(Estudiante E) {
-		// TODO Auto-generated method stub
+		
+		String sql ="insert into estudiante (rut, nombre, email, telefono) values ('"+ E.getRut()+"', '"+E.getNombre()+"', '"+E.getEmail()+"', '"+E.getTelefono()+"')";
 
+		try {
+
+			Connection c = CoenexionBDsustantiva.getCon();
+
+			Statement s = c.createStatement();
+
+			s.execute(sql);
+
+		} catch (Exception e2) {
+			System.err.println("Error en metodo create");
+			e2.printStackTrace();
+		}
 	}
 
 	@Override
@@ -109,7 +122,7 @@ public class EstudianteDAO implements IEstudianteDAO {
 
 	@Override
 	public void delete(int id) {
-		String sql = "delete from estudiante where id = '" + id;
+		String sql = "delete from estudiante where id = " + id;
 
 		try {
 

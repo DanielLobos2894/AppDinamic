@@ -69,10 +69,13 @@
 							<a
 							href="${pageContext.request.contextPath}/DetalleEstudianteServlet?id=${Est.getId()}&op=del"
 							class="btn btn-secundary"><i
-								class="fa-solid fa-skull-crossbones"></i></a> <a
+								class="fa-solid fa-skull-crossbones"></i></a> 
+								
+							<a								
 							href="${pageContext.request.contextPath}/DetalleEstudianteServlet?id=${Est.getId()}"
 							class="btn btn-secundary"><i
-								class="fa-solid fa-graduation-cap"></i></a></td>
+								class="fa-solid fa-graduation-cap"></i></a>
+						</td>
 					</tr>
 
 				</c:forEach>

@@ -34,17 +34,14 @@ public class DetalleEstudianteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String op = request.getParameter("op");
-		
 		String strId = request.getParameter("id");
-		int id = 0;
 		
-		if(strId != null) {
+		int id =0;
+		
+		if (strId != null) 
 			id = Integer.parseInt(strId);
-		}
 		
-		
-		
-		
+				
 		EstudianteDAO eDAO = new EstudianteDAO();
 		
 		if(op==null && id > 0) {
@@ -57,13 +54,12 @@ public class DetalleEstudianteServlet extends HttpServlet {
 			
 			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
 			
+			System.out.println(id +" "+op);
 		}else if (id==0){
 			
 			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
-		}
 		
-		
-		else if(op.equalsIgnoreCase("del")) {
+		}else if(op.equalsIgnoreCase("del")) {
 			
 			eDAO.delete(id);
 			
@@ -79,20 +75,32 @@ public class DetalleEstudianteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-		
+
 		String rut = request.getParameter("rut"); 
 		String nombre = request.getParameter("nombre");
 		String email = request.getParameter("email");
 		String telefono = request.getParameter("telefono");
 		
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		Estudiante E = new Estudiante(id,rut,nombre,email,telefono);
+		String strId = request.getParameter("id");
+		Estudiante E=null;
 		EstudianteDAO eDAO = new EstudianteDAO();
 		
-		eDAO.update(E);
+		if(!strId.isEmpty()) {
+			int id = Integer.parseInt(strId);
+			E = new Estudiante(id,rut,nombre,email,telefono);
+			eDAO.update(E);
+		}else {
+			E = new Estudiante();
+			E.setRut(rut);
+			E.setNombre(nombre);
+			E.setEmail(email);
+			E.setTelefono(telefono);
+			
+			eDAO.crear(E);
+		}
 		
-		response.sendRedirect(request.getContextPath()+ "/EstudianteServlet");
+		response.sendRedirect(request.getContextPath() + "/EstudianteServlet");
+		
 	}
 	
 	
