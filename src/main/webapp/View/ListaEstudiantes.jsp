@@ -72,9 +72,8 @@
 								class="fa-solid fa-skull-crossbones"></i></a> 
 								
 							<a								
-							href="${pageContext.request.contextPath}/DetalleEstudianteServlet?id=${Est.getId()}"
-							class="btn btn-secundary"><i
-								class="fa-solid fa-graduation-cap"></i></a>
+							href="${pageContext.request.contextPath}/DatosServlet?id=${Est.getId()}"
+							class="btn btn-secundary"><i class="fa-solid fa-user-pen"></i></a>
 						</td>
 					</tr>
 

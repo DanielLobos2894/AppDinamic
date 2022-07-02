@@ -29,7 +29,7 @@
 			method="post">
 
 			<input type="hidden" name="id" id="id" value="${estudiantes.getId()}">
-		
+
 
 			<div class="mb-3">
 				<label for="formRut" class="form-label">Rut</label> <input

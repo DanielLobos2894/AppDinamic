@@ -52,7 +52,7 @@ public class DetalleEstudianteServlet extends HttpServlet {
 			
 			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);
 			
-			System.out.println(id +" "+op);
+			
 		}else if (id==0){
 			
 			getServletContext().getRequestDispatcher("/View/DetalleEstudiante.jsp").forward(request,response);

@@ -39,29 +39,28 @@
 						data-bs-toggle="collapse" data-bs-target="#collapseOne"
 						aria-expanded="true" aria-controls="collapseOne">MiApp</button>
 				</h2>
-				
+
 				<%-- Resumen --%>
 				<div id="collapseOne" class="accordion-collapse collapse show"
 					aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
-						<strong><h2>App web creada con JEE.</h2><br>Apoyado
-							del material en la plataforma de sustantiva, dando inicio a este
-							pequeño vistazo a un proyecto:<br>
+						<strong><h2>App web creada con JEE.</h2>
+							<br>Apoyado del material en la plataforma de sustantiva,
+							dando inicio a este pequeño vistazo a un proyecto:<br>
 							<ul>
 								<li>Una lista de Estudiantes.</li>
 								<li>Actualizar los datos de cada Estudiante</li>
 								<li>Eliminar Estudiantes</li>
 								<li>Una lista de Facilitadores.</li>
 
-							</ul>
-						</strong>
+							</ul> </strong>
 					</div>
 				</div>
 			</div>
 
 			<div class="accordion-item">
 
-              <%-- Acceso rapido--%>
+				<%-- Acceso rapido--%>
 				<h2 class="accordion-header" id="headingTwo">
 					<button class="accordion-button collapsed" type="button"
 						data-bs-toggle="collapse" data-bs-target="#collapseTwo"
@@ -83,13 +82,13 @@
 									<li>Telefono</li>
 
 								</ul>
-								
+
 								<a
 									href="${pageContext.request.contextPath}/DetalleEstudianteServlet"
 									class="btn btn-primary">Nuevo</a>
 							</div>
 						</div>
-						<div class="card" style="float: left ;">
+						<div class="card" style="float: left;">
 							<img src="..." class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Facilitador</h5>
@@ -104,36 +103,19 @@
 									<li>Cuenta de Banco</li>
 
 								</ul>
-								
+
 								<a
 									href="${pageContext.request.contextPath}/DetalleFacilitadorServlet"
 									class="btn btn-primary">Nuevo</a>
 							</div>
 						</div>
-						<div class="card" style="float: left;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Facilitador</h5>
-								<p class="card-text">Agregar un Nuevo Facilitador.</p>
-								<ul>
-									<li>Rut</li>
-									<li>Nombre</li>
-									<li>Email</li>
-									<li>Telefono</li>
-
-								</ul>
-								
-								<a
-									href="${pageContext.request.contextPath}/DetalleEstudianteServlet"
-									class="btn btn-primary">Nuevo</a>
-							</div>
-						</div>
+						<div class="card" style="float: left;"></div>
 					</div>
 				</div>
 			</div>
-		
-			
-			
+
+
+
 		</div>
 
 	</div>
